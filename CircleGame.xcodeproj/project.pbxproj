@@ -1,0 +1,309 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D647CAF01E958A3A00EAB4CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647CAEF1E958A3A00EAB4CF /* AppDelegate.swift */; };
+		D647CAF21E958A3A00EAB4CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647CAF11E958A3A00EAB4CF /* ViewController.swift */; };
+		D647CAF51E958A3A00EAB4CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D647CAF31E958A3A00EAB4CF /* Main.storyboard */; };
+		D647CAF71E958A3A00EAB4CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D647CAF61E958A3A00EAB4CF /* Assets.xcassets */; };
+		D647CAFA1E958A3A00EAB4CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D647CAF81E958A3A00EAB4CF /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D647CAEC1E958A3A00EAB4CF /* CircleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D647CAEF1E958A3A00EAB4CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D647CAF11E958A3A00EAB4CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D647CAF41E958A3A00EAB4CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D647CAF61E958A3A00EAB4CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D647CAF91E958A3A00EAB4CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D647CAFB1E958A3A00EAB4CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D647CAE91E958A3A00EAB4CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D647CAE31E958A3A00EAB4CF = {
+			isa = PBXGroup;
+			children = (
+				D647CAEE1E958A3A00EAB4CF /* CircleGame */,
+				D647CAED1E958A3A00EAB4CF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D647CAED1E958A3A00EAB4CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D647CAEC1E958A3A00EAB4CF /* CircleGame.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D647CAEE1E958A3A00EAB4CF /* CircleGame */ = {
+			isa = PBXGroup;
+			children = (
+				D647CAEF1E958A3A00EAB4CF /* AppDelegate.swift */,
+				D647CAF11E958A3A00EAB4CF /* ViewController.swift */,
+				D647CAF31E958A3A00EAB4CF /* Main.storyboard */,
+				D647CAF61E958A3A00EAB4CF /* Assets.xcassets */,
+				D647CAF81E958A3A00EAB4CF /* LaunchScreen.storyboard */,
+				D647CAFB1E958A3A00EAB4CF /* Info.plist */,
+			);
+			path = CircleGame;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D647CAEB1E958A3A00EAB4CF /* CircleGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D647CAFE1E958A3A00EAB4CF /* Build configuration list for PBXNativeTarget "CircleGame" */;
+			buildPhases = (
+				D647CAE81E958A3A00EAB4CF /* Sources */,
+				D647CAE91E958A3A00EAB4CF /* Frameworks */,
+				D647CAEA1E958A3A00EAB4CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CircleGame;
+			productName = CircleGame;
+			productReference = D647CAEC1E958A3A00EAB4CF /* CircleGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D647CAE41E958A3A00EAB4CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Esten Hurtle";
+				TargetAttributes = {
+					D647CAEB1E958A3A00EAB4CF = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = F6Q9WB4KR2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D647CAE71E958A3A00EAB4CF /* Build configuration list for PBXProject "CircleGame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D647CAE31E958A3A00EAB4CF;
+			productRefGroup = D647CAED1E958A3A00EAB4CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D647CAEB1E958A3A00EAB4CF /* CircleGame */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D647CAEA1E958A3A00EAB4CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D647CAFA1E958A3A00EAB4CF /* LaunchScreen.storyboard in Resources */,
+				D647CAF71E958A3A00EAB4CF /* Assets.xcassets in Resources */,
+				D647CAF51E958A3A00EAB4CF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D647CAE81E958A3A00EAB4CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D647CAF21E958A3A00EAB4CF /* ViewController.swift in Sources */,
+				D647CAF01E958A3A00EAB4CF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D647CAF31E958A3A00EAB4CF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D647CAF41E958A3A00EAB4CF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D647CAF81E958A3A00EAB4CF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D647CAF91E958A3A00EAB4CF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D647CAFC1E958A3A00EAB4CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D647CAFD1E958A3A00EAB4CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D647CAFF1E958A3A00EAB4CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F6Q9WB4KR2;
+				INFOPLIST_FILE = CircleGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.estenh.CircleGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D647CB001E958A3A00EAB4CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F6Q9WB4KR2;
+				INFOPLIST_FILE = CircleGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.estenh.CircleGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D647CAE71E958A3A00EAB4CF /* Build configuration list for PBXProject "CircleGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D647CAFC1E958A3A00EAB4CF /* Debug */,
+				D647CAFD1E958A3A00EAB4CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D647CAFE1E958A3A00EAB4CF /* Build configuration list for PBXNativeTarget "CircleGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D647CAFF1E958A3A00EAB4CF /* Debug */,
+				D647CB001E958A3A00EAB4CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D647CAE41E958A3A00EAB4CF /* Project object */;
+}
