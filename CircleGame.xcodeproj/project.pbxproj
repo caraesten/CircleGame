@@ -12,7 +12,36 @@
 		D647CAF51E958A3A00EAB4CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D647CAF31E958A3A00EAB4CF /* Main.storyboard */; };
 		D647CAF71E958A3A00EAB4CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D647CAF61E958A3A00EAB4CF /* Assets.xcassets */; };
 		D647CAFA1E958A3A00EAB4CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D647CAF81E958A3A00EAB4CF /* LaunchScreen.storyboard */; };
+		D647CB021E958ABC00EAB4CF /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647CB011E958ABC00EAB4CF /* CircleView.swift */; };
+		D647CB041E95B3A500EAB4CF /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647CB031E95B3A500EAB4CF /* PlayerView.swift */; };
+		D647CB061E95B81A00EAB4CF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647CB051E95B81A00EAB4CF /* MainView.swift */; };
+		D647CB081E96A8F200EAB4CF /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647CB071E96A8F200EAB4CF /* GameSettings.swift */; };
+		D647CB101E96B32500EAB4CF /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647CB0F1E96B32500EAB4CF /* ViewControllerTests.swift */; };
+		D647CB171E96B44B00EAB4CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647CAF11E958A3A00EAB4CF /* ViewController.swift */; };
+		D647CB181E96B47500EAB4CF /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647CB071E96A8F200EAB4CF /* GameSettings.swift */; };
+		D647CB191E96B47900EAB4CF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647CB051E95B81A00EAB4CF /* MainView.swift */; };
+		D647CB1A1E96B47B00EAB4CF /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647CB011E958ABC00EAB4CF /* CircleView.swift */; };
+		D647CB1B1E96B47D00EAB4CF /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647CB031E95B3A500EAB4CF /* PlayerView.swift */; };
+		D647CB1D1E96B54300EAB4CF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647CB1C1E96B54300EAB4CF /* Utils.swift */; };
+		D647CB1E1E96B54300EAB4CF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647CB1C1E96B54300EAB4CF /* Utils.swift */; };
+		D647CB201E96B6DB00EAB4CF /* CircleViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647CB1F1E96B6DB00EAB4CF /* CircleViewTests.swift */; };
+		D647CB221E96BDF800EAB4CF /* PlayerViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647CB211E96BDF800EAB4CF /* PlayerViewTests.swift */; };
+		D647CB241E96C15A00EAB4CF /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647CB231E96C15A00EAB4CF /* UtilsTests.swift */; };
+		D647CB261E96C58B00EAB4CF /* CollisionTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647CB251E96C58B00EAB4CF /* CollisionTester.swift */; };
+		D647CB271E96C58B00EAB4CF /* CollisionTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647CB251E96C58B00EAB4CF /* CollisionTester.swift */; };
+		D647CB281E96C80800EAB4CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D647CAF31E958A3A00EAB4CF /* Main.storyboard */; };
+		D647CB2A1E96C9D100EAB4CF /* CollisionTesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647CB291E96C9D100EAB4CF /* CollisionTesterTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D647CB121E96B32500EAB4CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D647CAE41E958A3A00EAB4CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D647CAEB1E958A3A00EAB4CF;
+			remoteInfo = CircleGame;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D647CAEC1E958A3A00EAB4CF /* CircleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +51,30 @@
 		D647CAF61E958A3A00EAB4CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D647CAF91E958A3A00EAB4CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D647CAFB1E958A3A00EAB4CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D647CB011E958ABC00EAB4CF /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		D647CB031E95B3A500EAB4CF /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		D647CB051E95B81A00EAB4CF /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D647CB071E96A8F200EAB4CF /* GameSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
+		D647CB0D1E96B32500EAB4CF /* CircleGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CircleGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D647CB0F1E96B32500EAB4CF /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
+		D647CB111E96B32500EAB4CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D647CB1C1E96B54300EAB4CF /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		D647CB1F1E96B6DB00EAB4CF /* CircleViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleViewTests.swift; sourceTree = "<group>"; };
+		D647CB211E96BDF800EAB4CF /* PlayerViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewTests.swift; sourceTree = "<group>"; };
+		D647CB231E96C15A00EAB4CF /* UtilsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
+		D647CB251E96C58B00EAB4CF /* CollisionTester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionTester.swift; sourceTree = "<group>"; };
+		D647CB291E96C9D100EAB4CF /* CollisionTesterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionTesterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D647CAE91E958A3A00EAB4CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D647CB0A1E96B32500EAB4CF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				D647CAEE1E958A3A00EAB4CF /* CircleGame */,
+				D647CB0E1E96B32500EAB4CF /* CircleGameTests */,
 				D647CAED1E958A3A00EAB4CF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				D647CAEC1E958A3A00EAB4CF /* CircleGame.app */,
+				D647CB0D1E96B32500EAB4CF /* CircleGameTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,8 +111,27 @@
 				D647CAF61E958A3A00EAB4CF /* Assets.xcassets */,
 				D647CAF81E958A3A00EAB4CF /* LaunchScreen.storyboard */,
 				D647CAFB1E958A3A00EAB4CF /* Info.plist */,
+				D647CB011E958ABC00EAB4CF /* CircleView.swift */,
+				D647CB031E95B3A500EAB4CF /* PlayerView.swift */,
+				D647CB051E95B81A00EAB4CF /* MainView.swift */,
+				D647CB071E96A8F200EAB4CF /* GameSettings.swift */,
+				D647CB1C1E96B54300EAB4CF /* Utils.swift */,
+				D647CB251E96C58B00EAB4CF /* CollisionTester.swift */,
 			);
 			path = CircleGame;
+			sourceTree = "<group>";
+		};
+		D647CB0E1E96B32500EAB4CF /* CircleGameTests */ = {
+			isa = PBXGroup;
+			children = (
+				D647CB0F1E96B32500EAB4CF /* ViewControllerTests.swift */,
+				D647CB111E96B32500EAB4CF /* Info.plist */,
+				D647CB1F1E96B6DB00EAB4CF /* CircleViewTests.swift */,
+				D647CB211E96BDF800EAB4CF /* PlayerViewTests.swift */,
+				D647CB231E96C15A00EAB4CF /* UtilsTests.swift */,
+				D647CB291E96C9D100EAB4CF /* CollisionTesterTests.swift */,
+			);
+			path = CircleGameTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +154,24 @@
 			productReference = D647CAEC1E958A3A00EAB4CF /* CircleGame.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D647CB0C1E96B32500EAB4CF /* CircleGameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D647CB141E96B32500EAB4CF /* Build configuration list for PBXNativeTarget "CircleGameTests" */;
+			buildPhases = (
+				D647CB091E96B32500EAB4CF /* Sources */,
+				D647CB0A1E96B32500EAB4CF /* Frameworks */,
+				D647CB0B1E96B32500EAB4CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D647CB131E96B32500EAB4CF /* PBXTargetDependency */,
+			);
+			name = CircleGameTests;
+			productName = CircleGameTests;
+			productReference = D647CB0D1E96B32500EAB4CF /* CircleGameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -98,6 +186,12 @@
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = F6Q9WB4KR2;
 						ProvisioningStyle = Automatic;
+					};
+					D647CB0C1E96B32500EAB4CF = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = F6Q9WB4KR2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D647CAEB1E958A3A00EAB4CF;
 					};
 				};
 			};
@@ -115,6 +209,7 @@
 			projectRoot = "";
 			targets = (
 				D647CAEB1E958A3A00EAB4CF /* CircleGame */,
+				D647CB0C1E96B32500EAB4CF /* CircleGameTests */,
 			);
 		};
 /* End PBXProject section */
@@ -130,6 +225,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D647CB0B1E96B32500EAB4CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D647CB281E96C80800EAB4CF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -137,12 +240,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D647CB021E958ABC00EAB4CF /* CircleView.swift in Sources */,
 				D647CAF21E958A3A00EAB4CF /* ViewController.swift in Sources */,
+				D647CB081E96A8F200EAB4CF /* GameSettings.swift in Sources */,
+				D647CB261E96C58B00EAB4CF /* CollisionTester.swift in Sources */,
+				D647CB1D1E96B54300EAB4CF /* Utils.swift in Sources */,
 				D647CAF01E958A3A00EAB4CF /* AppDelegate.swift in Sources */,
+				D647CB061E95B81A00EAB4CF /* MainView.swift in Sources */,
+				D647CB041E95B3A500EAB4CF /* PlayerView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D647CB091E96B32500EAB4CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D647CB201E96B6DB00EAB4CF /* CircleViewTests.swift in Sources */,
+				D647CB171E96B44B00EAB4CF /* ViewController.swift in Sources */,
+				D647CB1A1E96B47B00EAB4CF /* CircleView.swift in Sources */,
+				D647CB2A1E96C9D100EAB4CF /* CollisionTesterTests.swift in Sources */,
+				D647CB241E96C15A00EAB4CF /* UtilsTests.swift in Sources */,
+				D647CB191E96B47900EAB4CF /* MainView.swift in Sources */,
+				D647CB1E1E96B54300EAB4CF /* Utils.swift in Sources */,
+				D647CB221E96BDF800EAB4CF /* PlayerViewTests.swift in Sources */,
+				D647CB271E96C58B00EAB4CF /* CollisionTester.swift in Sources */,
+				D647CB1B1E96B47D00EAB4CF /* PlayerView.swift in Sources */,
+				D647CB101E96B32500EAB4CF /* ViewControllerTests.swift in Sources */,
+				D647CB181E96B47500EAB4CF /* GameSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D647CB131E96B32500EAB4CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D647CAEB1E958A3A00EAB4CF /* CircleGame */;
+			targetProxy = D647CB121E96B32500EAB4CF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D647CAF31E958A3A00EAB4CF /* Main.storyboard */ = {
@@ -283,6 +419,34 @@
 			};
 			name = Release;
 		};
+		D647CB151E96B32500EAB4CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = F6Q9WB4KR2;
+				INFOPLIST_FILE = CircleGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.estenh.CircleGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CircleGame.app/CircleGame";
+			};
+			name = Debug;
+		};
+		D647CB161E96B32500EAB4CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = F6Q9WB4KR2;
+				INFOPLIST_FILE = CircleGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.estenh.CircleGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CircleGame.app/CircleGame";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -300,6 +464,14 @@
 			buildConfigurations = (
 				D647CAFF1E958A3A00EAB4CF /* Debug */,
 				D647CB001E958A3A00EAB4CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D647CB141E96B32500EAB4CF /* Build configuration list for PBXNativeTarget "CircleGameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D647CB151E96B32500EAB4CF /* Debug */,
+				D647CB161E96B32500EAB4CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
