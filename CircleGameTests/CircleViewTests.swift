@@ -22,7 +22,7 @@ class CircleViewTests: XCTestCase {
     func testRotationTransform() {
         let circleView = CircleView()
         XCTAssertEqual(circleView.currentAngle, 0)
-        circleView.incrementAngle()
+        circleView.advanceFrame(timeDelta: GameSettings.FRAME_INTERVAL)
         let expectedRotation = 2.0 * Double.pi / Double(GameSettings.FULL_CIRCLE_ROTATION_FRAMES)
         let inverseAffineTransform = circleView.transform.rotated(by: -CGFloat(expectedRotation))
         XCTAssertEqual(inverseAffineTransform, CGAffineTransform.identity)
@@ -31,7 +31,7 @@ class CircleViewTests: XCTestCase {
     func testRotationRadians() {
         let circleView = CircleView()
         XCTAssertEqual(circleView.currentAngle, 0)
-        circleView.incrementAngle()
+        circleView.advanceFrame(timeDelta: GameSettings.FRAME_INTERVAL)
         let expectedRotation = 2.0 * Double.pi / Double(GameSettings.FULL_CIRCLE_ROTATION_FRAMES)
         XCTAssertEqual(expectedRotation, circleView.currentAngle)
     }
@@ -45,8 +45,8 @@ class CircleViewTests: XCTestCase {
 
         XCTAssertEqual(gap1.0, (2 * Double.pi) / Double(2))
         XCTAssertEqual(gap1.1, (2 * Double.pi) / Double(2) + Utils.toRadians(degrees: GameSettings.GAP_SIZE))
-        XCTAssertEqual(gap2.0, 2 * (2 * Double.pi) / Double(2))
-        XCTAssertEqual(gap2.1, 2 * (2 * Double.pi) / Double(2) + Utils.toRadians(degrees: GameSettings.GAP_SIZE))
+        XCTAssertEqual(gap2.0, Utils.limitAngle(2 * (2 * Double.pi) / Double(2)))
+        XCTAssertEqual(gap2.1, Utils.limitAngle(2 * (2 * Double.pi) / Double(2) + Utils.toRadians(degrees: GameSettings.GAP_SIZE)))
         
         circleView.incrementGaps()
 
@@ -63,8 +63,8 @@ class CircleViewTests: XCTestCase {
         XCTAssertEqual(gap2.0, 2 * (2 * Double.pi) / Double(3))
         XCTAssertEqual(gap2.1, 2 * (2 * Double.pi) / Double(3) + Utils.toRadians(degrees: GameSettings.GAP_SIZE))
 
-        XCTAssertEqual(gap3.0, 3 * (2 * Double.pi) / Double(3))
-        XCTAssertEqual(gap3.1, 3 * (2 * Double.pi) / Double(3) + Utils.toRadians(degrees: GameSettings.GAP_SIZE))
+        XCTAssertEqual(gap3.0, Utils.limitAngle(3 * (2 * Double.pi) / Double(3)))
+        XCTAssertEqual(gap3.1, Utils.limitAngle(3 * (2 * Double.pi) / Double(3) + Utils.toRadians(degrees: GameSettings.GAP_SIZE)))
     }
     
     func testResetGaps() {

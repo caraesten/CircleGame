@@ -26,13 +26,13 @@ class CollisionTesterTests: XCTestCase {
         
         // Position this over the first gap
         while (Utils.limitAngle((circleView.gaps?[0].1)! + circleView.currentAngle) < 1.5 * Double.pi) {
-            circleView.incrementAngle()
+            circleView.advanceFrame(timeDelta: GameSettings.FRAME_INTERVAL)
         }
         XCTAssertTrue(collisionTester.testOverGap(playerView: playerView, circleView: circleView))
         
         // Position this at the first safe position after the first gap
         while (Utils.limitAngle((circleView.gaps?[0].0)! + circleView.currentAngle) < 1.5 * Double.pi) {
-            circleView.incrementAngle()
+            circleView.advanceFrame(timeDelta: GameSettings.FRAME_INTERVAL)
         }
         XCTAssertFalse(collisionTester.testOverGap(playerView: playerView, circleView: circleView))
     }

@@ -59,8 +59,8 @@ class CircleView: UIView {
         return uiColor
     }
     
-    func incrementAngle() {
-        let newAngle = currentAngle + 2.0 * Double.pi / Double(GameSettings.FULL_CIRCLE_ROTATION_FRAMES)
+    func advanceFrame(timeDelta: Double) {
+        let newAngle = currentAngle + 2.0 * Double.pi / Double(GameSettings.FULL_CIRCLE_ROTATION_FRAMES) * (timeDelta / GameSettings.FRAME_INTERVAL)
         transform = CGAffineTransform(rotationAngle: CGFloat(newAngle))
         currentAngle = Utils.limitAngle(newAngle)
     }

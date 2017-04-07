@@ -10,38 +10,42 @@ import Foundation
 import UIKit
 
 class PlayerView:UIView {
+    // public for tests
+    static let JUMP_LENGTH = 25.0
+
     var color = UIColor.blue
     var animationDelegate:PlayerAnimationDelegate? = nil
-
+    
+    private(set) var isJumping = false
     private(set) var isAlive = true
 
-    private static let JUMP_LENGTH = 25
+    private static let JUMP_DISTANCE = 55
     
-    public var isJumping: Bool {
-        get {
-            let animation = layer.animation(forKey: "jump")
-            if animation != nil {
-                return true
-            }
-            return false
-        }
-    }
-    private var mJumpTimer = 0
+    private var mJumpTimer = 0.0
 
     func jump() {
-        if (isAlive) {
-            CATransaction.begin()
-            CATransaction.setCompletionBlock({
-                self.animationDelegate?.onJumpAnimationComplete()
-            })
-            let animation = CABasicAnimation(keyPath: "position")
-            animation.autoreverses = true
-            animation.repeatCount = 1
-            animation.toValue = NSValue(cgPoint: CGPoint(x:center.x, y:center.y - 55))
-            animation.duration = Double(PlayerView.JUMP_LENGTH) / Double(GameSettings.FPS) / 2
-            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-            layer.add(animation, forKey: "jump")
-            CATransaction.commit()
+        if (isAlive && !isJumping) {
+            isJumping = true
+        }
+    }
+    
+    func advanceFrame(timeDelta: Double) {
+        if isJumping {
+            let elapsedFrames = timeDelta / Double(GameSettings.FRAME_INTERVAL)
+            mJumpTimer += elapsedFrames
+            if (mJumpTimer >= PlayerView.JUMP_LENGTH) {
+                isJumping = false
+                transform = CGAffineTransform.identity
+                mJumpTimer = 0
+                animationDelegate?.onJumpAnimationComplete()
+            } else {
+                let progressPercent = mJumpTimer / PlayerView.JUMP_LENGTH
+                let distanceFromMidpoint = 1 - abs(0.5 - progressPercent) / 0.5
+                NSLog("percent pre interp: %f", distanceFromMidpoint)
+                let interpolatedPercent = Utils.easeOut(timePercent: distanceFromMidpoint)
+                NSLog("Percent: %f", interpolatedPercent)
+                transform = CGAffineTransform(translationX: 0, y: -CGFloat(Double(PlayerView.JUMP_DISTANCE) * interpolatedPercent))
+            }
         }
     }
     

@@ -23,6 +23,7 @@ class ViewController: UIViewController, MainViewTouchDelegate, PlayerAnimationDe
     private var mScore = 0
     private var mHighScore = 0
     private var mHasScoredJump = false
+    private var mLastFrameTimestamp = NSDate.timeIntervalSinceReferenceDate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,7 @@ class ViewController: UIViewController, MainViewTouchDelegate, PlayerAnimationDe
     
     func resetGame() {
         mScore = 0
+        mLastFrameTimestamp = NSDate.timeIntervalSinceReferenceDate
         mScoreLabel.text = String(mScore)
         mPlayerView.revive()
         mCircleView.resetGaps()
@@ -47,7 +49,11 @@ class ViewController: UIViewController, MainViewTouchDelegate, PlayerAnimationDe
     
     func gameStep(t: Timer) {
         if mPlayerView.isAlive {
-            mCircleView.incrementAngle()
+            let now = NSDate.timeIntervalSinceReferenceDate
+            let timeDelta = now - mLastFrameTimestamp
+            mCircleView.advanceFrame(timeDelta: timeDelta)
+            mPlayerView.advanceFrame(timeDelta: timeDelta)
+            mLastFrameTimestamp = now
             let topColor = mCircleView.getColorAtTop()
             if topColor.cgColor.alpha != 0 {
                 mPlayerView.color = topColor

@@ -45,7 +45,8 @@ class PlayerViewTests: XCTestCase {
         playerView.animationDelegate = delegate
         playerView.jump()
         XCTAssert(playerView.isJumping == true)
-        XCTAssert(playerView.layer.animation(forKey: "jump") != nil)
+        playerView.advanceFrame(timeDelta: GameSettings.FRAME_INTERVAL * PlayerView.JUMP_LENGTH)
+        XCTAssert(playerView.isJumping == false)
         waitForExpectations(timeout: 1) { errorOpt in
             if errorOpt != nil {
                 XCTFail("Wait for expectation timed out")
