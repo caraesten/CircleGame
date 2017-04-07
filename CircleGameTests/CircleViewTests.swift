@@ -67,6 +67,29 @@ class CircleViewTests: XCTestCase {
         XCTAssertEqual(gap3.1, Utils.limitAngle(3 * (2 * Double.pi) / Double(3) + Utils.toRadians(degrees: GameSettings.GAP_SIZE)))
     }
     
+    func testIncrementRotation() {
+        let circleView = CircleView()
+        circleView.advanceFrame(timeDelta: GameSettings.FRAME_INTERVAL * Double(GameSettings.FULL_CIRCLE_ROTATION_FRAMES))
+        XCTAssertEqualWithAccuracy(circleView.currentAngle, 2 * Double.pi, accuracy: 0.00001)
+        circleView.incrementRotation()
+        circleView.advanceFrame(timeDelta: GameSettings.FRAME_INTERVAL * Double(Double(GameSettings.FULL_CIRCLE_ROTATION_FRAMES) * 0.9))
+        XCTAssertEqualWithAccuracy(circleView.currentAngle, 2 * Double.pi, accuracy: 0.00001)
+    }
+    
+    func testResetRotation() {
+        let circleView = CircleView()
+        circleView.incrementRotation()
+        circleView.advanceFrame(timeDelta: GameSettings.FRAME_INTERVAL * Double(Double(GameSettings.FULL_CIRCLE_ROTATION_FRAMES) * 0.9))
+        
+        // The painful trials of comparing bounded floating-point numbers...
+        XCTAssertTrue(circleView.currentAngle == 2 * Double.pi || circleView.currentAngle == 0)
+        
+        circleView.resetRotation()
+        
+        circleView.advanceFrame(timeDelta: GameSettings.FRAME_INTERVAL * Double(GameSettings.FULL_CIRCLE_ROTATION_FRAMES))
+        XCTAssertEqualWithAccuracy(circleView.currentAngle, 2 * Double.pi, accuracy: 0.00001)
+    }
+    
     func testResetGaps() {
         let circleView = CircleView()
         var gaps = circleView.gaps!

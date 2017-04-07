@@ -18,8 +18,9 @@ class CircleView: UIView {
     private static let END_COLOR = UIColor(red:248.0 / 255.0, green: 187.0 / 255.0, blue: 179.0 / 255.0, alpha: 1)
     private static let PADDING = CGFloat(4.0)
     private static let WIDTH = CGFloat(4.0)
-    
+
     private var mNumberOfSegments = 2
+    private var mRotationModifier = 0.0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -60,7 +61,7 @@ class CircleView: UIView {
     }
     
     func advanceFrame(timeDelta: Double) {
-        let newAngle = currentAngle + 2.0 * Double.pi / Double(GameSettings.FULL_CIRCLE_ROTATION_FRAMES) * (timeDelta / GameSettings.FRAME_INTERVAL)
+        let newAngle = currentAngle + 2.0 * Double.pi / (Double(GameSettings.FULL_CIRCLE_ROTATION_FRAMES) - mRotationModifier) * (timeDelta / GameSettings.FRAME_INTERVAL)
         transform = CGAffineTransform(rotationAngle: CGFloat(newAngle))
         currentAngle = Utils.limitAngle(newAngle)
     }
@@ -73,6 +74,21 @@ class CircleView: UIView {
         mNumberOfSegments += 1
         gaps = getClipAngles()
         setNeedsDisplay()
+    }
+    
+    func resetState() {
+        resetRotation()
+        resetGaps()
+        resetAngle()
+    }
+    
+    // 10 percent faster...
+    func incrementRotation() {
+        mRotationModifier += Double(GameSettings.FULL_CIRCLE_ROTATION_FRAMES) * 0.1
+    }
+    
+    func resetRotation() {
+        mRotationModifier = 0
     }
     
     func resetGaps() {

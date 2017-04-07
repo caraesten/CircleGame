@@ -37,6 +37,31 @@ class PlayerViewTests: XCTestCase {
         }
     }
     
+    func testDecrementJumpTime() {
+        let playerView = PlayerView()
+        playerView.jump()
+        playerView.advanceFrame(timeDelta: GameSettings.FRAME_INTERVAL * (PlayerView.JUMP_LENGTH - PlayerView.JUMP_LENGTH * 0.1))
+        XCTAssertTrue(playerView.isJumping)
+        playerView.advanceFrame(timeDelta: GameSettings.FRAME_INTERVAL * PlayerView.JUMP_LENGTH)
+        XCTAssertFalse(playerView.isJumping)
+        playerView.decrementJumpTime()
+        playerView.jump()
+        playerView.advanceFrame(timeDelta: GameSettings.FRAME_INTERVAL * (PlayerView.JUMP_LENGTH - PlayerView.JUMP_LENGTH * 0.1))
+        XCTAssertFalse(playerView.isJumping)
+    }
+    
+    func testResetState() {
+        let playerView = PlayerView()
+        playerView.decrementJumpTime()
+        playerView.jump()
+        playerView.advanceFrame(timeDelta: GameSettings.FRAME_INTERVAL * (PlayerView.JUMP_LENGTH - PlayerView.JUMP_LENGTH * 0.1))
+        XCTAssertFalse(playerView.isJumping)
+        playerView.resetState()
+        playerView.jump()
+        playerView.advanceFrame(timeDelta: GameSettings.FRAME_INTERVAL * (PlayerView.JUMP_LENGTH - PlayerView.JUMP_LENGTH * 0.10))
+        XCTAssertTrue(playerView.isJumping)
+    }
+    
     func testJump() {
         let playerView = PlayerView()
         let delegate = SpyAnimationDelegate()
@@ -54,6 +79,16 @@ class PlayerViewTests: XCTestCase {
             }
             XCTAssertTrue(true)
         }
+    }
+    
+    func testDoubleJump() {
+        let playerView = PlayerView()
+        playerView.jump()
+        playerView.advanceFrame(timeDelta: GameSettings.FRAME_INTERVAL * PlayerView.JUMP_LENGTH / 2.0)
+        XCTAssert(playerView.isJumping == true)
+        playerView.jump()
+        playerView.advanceFrame(timeDelta: GameSettings.FRAME_INTERVAL * PlayerView.JUMP_LENGTH / 2.0)
+        XCTAssert(playerView.isJumping == false)
     }
     
     func testRevive() {

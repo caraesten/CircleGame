@@ -22,6 +22,7 @@ class PlayerView:UIView {
     private static let JUMP_DISTANCE = 55
     
     private var mJumpTimer = 0.0
+    private var mJumpLength = PlayerView.JUMP_LENGTH
 
     func jump() {
         if (isAlive && !isJumping) {
@@ -33,13 +34,13 @@ class PlayerView:UIView {
         if isJumping {
             let elapsedFrames = timeDelta / Double(GameSettings.FRAME_INTERVAL)
             mJumpTimer += elapsedFrames
-            if (mJumpTimer >= PlayerView.JUMP_LENGTH) {
+            if (mJumpTimer >= mJumpLength) {
                 isJumping = false
                 transform = CGAffineTransform.identity
                 mJumpTimer = 0
                 animationDelegate?.onJumpAnimationComplete()
             } else {
-                let progressPercent = mJumpTimer / PlayerView.JUMP_LENGTH
+                let progressPercent = mJumpTimer / mJumpLength
                 let distanceFromMidpoint = 1 - abs(0.5 - progressPercent) / 0.5
                 NSLog("percent pre interp: %f", distanceFromMidpoint)
                 let interpolatedPercent = Utils.easeOut(timePercent: distanceFromMidpoint)
@@ -47,6 +48,16 @@ class PlayerView:UIView {
                 transform = CGAffineTransform(translationX: 0, y: -CGFloat(Double(PlayerView.JUMP_DISTANCE) * interpolatedPercent))
             }
         }
+    }
+    
+    func resetState() {
+        mJumpLength = PlayerView.JUMP_LENGTH
+        revive()
+    }
+    
+    // 10% less jump
+    func decrementJumpTime() {
+        mJumpLength -= PlayerView.JUMP_LENGTH * 0.1
     }
     
     func kill() {

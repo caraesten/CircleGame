@@ -42,9 +42,8 @@ class ViewController: UIViewController, MainViewTouchDelegate, PlayerAnimationDe
         mScore = 0
         mLastFrameTimestamp = NSDate.timeIntervalSinceReferenceDate
         mScoreLabel.text = String(mScore)
-        mPlayerView.revive()
-        mCircleView.resetGaps()
-        mCircleView.resetAngle()
+        mPlayerView.resetState()
+        mCircleView.resetState()
     }
     
     func gameStep(t: Timer) {
@@ -91,7 +90,12 @@ class ViewController: UIViewController, MainViewTouchDelegate, PlayerAnimationDe
     func onJumpAnimationComplete() {
         mHasScoredJump = false
         if (mScore != 0 && mScore % 4 == 0) {
-            mCircleView.incrementGaps()
+            if (mCircleView.gaps?.count)! < 4 {
+                mCircleView.incrementGaps()
+            } else {
+                mCircleView.incrementRotation()
+                mPlayerView.decrementJumpTime()
+            }
         }
     }
 }
