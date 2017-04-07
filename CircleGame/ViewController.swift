@@ -28,7 +28,7 @@ class ViewController: UIViewController, MainViewTouchDelegate, PlayerAnimationDe
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        mTimer = Timer.scheduledTimer(withTimeInterval: GameSettings.FRAME_INTERVAL, repeats: true, block: gameStep)
+        mTimer = Timer.scheduledTimer(withTimeInterval: GameSettings.FRAME_INTERVAL, repeats: true, block: timerInvoke)
         (self.view as! MainView).delegate = self
         mPlayerView.animationDelegate = self
     }
@@ -46,13 +46,17 @@ class ViewController: UIViewController, MainViewTouchDelegate, PlayerAnimationDe
         mCircleView.resetState()
     }
     
-    func gameStep(t: Timer) {
+    func timerInvoke(timer: Timer) {
+        let now = NSDate.timeIntervalSinceReferenceDate
+        let timeDelta = now - mLastFrameTimestamp
+        mLastFrameTimestamp = now
+        gameStep(timeDelta: timeDelta)
+    }
+    
+    func gameStep(timeDelta: Double) {
         if mPlayerView.isAlive {
-            let now = NSDate.timeIntervalSinceReferenceDate
-            let timeDelta = now - mLastFrameTimestamp
             mCircleView.advanceFrame(timeDelta: timeDelta)
             mPlayerView.advanceFrame(timeDelta: timeDelta)
-            mLastFrameTimestamp = now
             let topColor = mCircleView.getColorAtTop()
             if topColor.cgColor.alpha != 0 {
                 mPlayerView.color = topColor

@@ -25,18 +25,34 @@ class ViewControllerTests: XCTestCase {
     }
     
     func testGameStep() {
-        let fakeTimer = Timer()
         vc?.mCollisionTester = NeverCollisionTester()
         // Ideally, I could create mock views and check incrementAngle has been called.
         XCTAssertEqual(vc?.mCircleView.currentAngle, 0.0)
-        vc?.gameStep(t: fakeTimer)
+        vc?.gameStep(timeDelta: GameSettings.FRAME_INTERVAL)
         let expectedRotation = 2.0 * Double.pi / Double(GameSettings.FULL_CIRCLE_ROTATION_FRAMES)
         XCTAssertEqual(vc?.mCircleView.currentAngle, expectedRotation)
         XCTAssertTrue((vc?.mPlayerView.isAlive)!)
         
         vc?.mCollisionTester = AlwaysCollisionTester()
-        vc?.gameStep(t: fakeTimer)
+        vc?.gameStep(timeDelta: Double(GameSettings.FRAME_INTERVAL))
         XCTAssertFalse((vc?.mPlayerView.isAlive)!)
+    }
+    
+    func testReset() {
+        let circleView = (vc?.mCircleView)!
+        
+        // Position over the first gap
+        while (Utils.limitAngle((circleView.gaps?[0].1)! + circleView.currentAngle) < 1.5 * Double.pi) {
+            vc?.gameStep(timeDelta: GameSettings.FRAME_INTERVAL)
+        }
+        
+        // Kill the player
+        vc?.gameStep(timeDelta: GameSettings.FRAME_INTERVAL)
+        XCTAssertFalse((vc?.mPlayerView.isAlive)!)
+        vc?.resetGame()
+
+        XCTAssertEqual(vc?.mCircleView.currentAngle, 0.0)
+        XCTAssertTrue((vc?.mPlayerView.isAlive)!)
     }
 }
 
