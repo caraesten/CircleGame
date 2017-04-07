@@ -42,9 +42,7 @@ class PlayerView:UIView {
             } else {
                 let progressPercent = mJumpTimer / mJumpLength
                 let distanceFromMidpoint = 1 - abs(0.5 - progressPercent) / 0.5
-                NSLog("percent pre interp: %f", distanceFromMidpoint)
                 let interpolatedPercent = Utils.easeOut(timePercent: distanceFromMidpoint)
-                NSLog("Percent: %f", interpolatedPercent)
                 transform = CGAffineTransform(translationX: 0, y: -CGFloat(Double(PlayerView.JUMP_DISTANCE) * interpolatedPercent))
             }
         }
